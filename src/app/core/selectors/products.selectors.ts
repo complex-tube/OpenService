@@ -1,5 +1,4 @@
 import {createFeatureSelector, createSelector} from "@ngrx/store";
-import {CategoriesState} from "../models/states/categories.state";
 import {ProductsState} from "../models/states/products.state";
 
 export namespace ProductsSelectors {
