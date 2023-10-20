@@ -1,6 +1,6 @@
 <nav>
   <mat-nav-list>
-    <div *ngFor="let category of (categories$ | async)">
+    <div *ngFor="let category of (categories$ | async)" (click)="routeCategory(category)">
       <a mat-list-item>
         {{category.name}}
       </a>
