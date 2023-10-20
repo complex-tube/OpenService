@@ -1,0 +1,9 @@
+<section>
+    <div class="container">
+        <mat-card *ngFor="let product of (products$ | async)">
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-content>Цена: {{product.price}}</mat-card-content>
+            <button mat-raised-button>В корзину</button>
+        </mat-card>
+    </div>
+</section>
