@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import {SharedModule} from "./shared/shared.module";
+import {categoriesReducer} from "./core/reducers/categories.reducer";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,8 +17,11 @@ import {SharedModule} from "./shared/shared.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({
+      categoriesState: categoriesReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
