@@ -7,7 +7,6 @@ import {ProductsSelectors} from "../../selectors/products.selectors";
 import {ProductsState} from "../../models/states/products.state";
 import {fromPromise} from "rxjs/internal/observable/innerFrom";
 import {environment} from "../../../../environments/environment";
-import {CategoryModel} from "../../models/category.model";
 import axios, {AxiosError} from "axios";
 
 @Injectable({
