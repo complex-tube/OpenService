@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Store} from "@ngrx/store";
-import {map, Observable} from "rxjs";
+import {catchError, EMPTY, map, Observable} from "rxjs";
 import {CategoryModel} from "../../models/category.model";
 import {CategoriesSelectors} from "../../selectors/categories.selectors";
 import {CategoriesActions} from "../../actions/categories.actions";
 import {CategoriesState} from "../../models/states/categories.state";
-import axios from 'axios';
+import axios, {AxiosError} from 'axios';
 import {environment} from "../../../../environments/environment";
 import {fromPromise} from "rxjs/internal/observable/innerFrom";
 
@@ -37,6 +37,10 @@ export class CategoriesService {
   private getCategoriesFromJson(): Observable<CategoryModel[]> {
     return fromPromise(axios.get(environment.nomenclaturePath))
         .pipe(
+            catchError((error: AxiosError) => {
+              console.log(error.message);
+              return EMPTY
+            }),
             map((data): CategoryModel[] => {
               return data.data['categories'].map((category: any): CategoryModel => {
                 return {
