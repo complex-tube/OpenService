@@ -4,7 +4,9 @@ nav {
   min-width: 200px;
   width: 200px;
   min-height: calc(100vh - 60px);
-  max-height: calc(100vh - 60px);
+  height: 100%;
+  //max-height: calc(100vh - 60px);
+  box-sizing: border-box;
 
   background: bisque;
 
