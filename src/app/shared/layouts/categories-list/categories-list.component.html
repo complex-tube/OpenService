@@ -1,1 +1,10 @@
-<p>categories-list works!</p>
+<nav>
+  <mat-nav-list>
+    <div *ngFor="let category of (categories$ | async)">
+      <a mat-list-item>
+        {{category.name}}
+      </a>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-nav-list>
+</nav>

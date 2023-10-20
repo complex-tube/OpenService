@@ -4,6 +4,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { CategoriesListComponent } from './layouts/categories-list/categories-list.component';
 import {MatButtonModule} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
+import {MatListModule} from "@angular/material/list";
 
 
 
@@ -19,7 +20,8 @@ import {RouterLink} from "@angular/router";
   imports: [
     CommonModule,
     MatButtonModule,
-    RouterLink
+    RouterLink,
+    MatListModule
   ]
 })
 export class SharedModule { }
