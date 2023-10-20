@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Store} from "@ngrx/store";
-import {map, Observable, of, Subject} from "rxjs";
+import {map, Observable} from "rxjs";
 import {CategoryModel} from "../../models/category.model";
 import {CategoriesSelectors} from "../../selectors/categories.selectors";
 import {CategoriesActions} from "../../actions/categories.actions";
@@ -27,7 +27,7 @@ export class CategoriesService {
     return this.categories$;
   }
 
-  pushCategories(categories: CategoryModel[]) {
+  private pushCategories(categories: CategoryModel[]) {
     const categoriesState: CategoriesState = {
       categories: categories
     };
