@@ -1,0 +1,22 @@
+@use "src/base";
+
+header {
+  display: flex;
+  justify-content: center;
+
+  min-height: base.$header-height;
+
+  background: antiquewhite;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: base.$container-adaptive-full-hd-width;
+
+    label {
+      font-size: 20px;
+    }
+  }
+}
