@@ -1,1 +1,21 @@
-
+<section>
+  <ng-container *ngIf="(cartService.getProducts() | async)?.length == 0">
+    <div class="container">
+      <mat-card class="empty">
+        <mat-card-title>В корзине еще ничего нет</mat-card-title>
+      </mat-card>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="(cartService.getProducts() | async)?.length != 0">
+    <div class="container">
+      <mat-card *ngFor="let product of (cartService.getProducts() | async)">
+        <mat-card-title>{{product.name}}</mat-card-title>
+        <mat-card-content>Цена: {{product.price}}</mat-card-content>
+        <button mat-raised-button (click)="cartService.deleteFromCart(product)">Убрать из корзины</button>
+      </mat-card>
+    </div>
+    <mat-card class="total-cost">
+      <mat-card-title>Общая стоимость товаров: {{getTotalCost() | async}} руб</mat-card-title>
+    </mat-card>
+  </ng-container>
+</section>
