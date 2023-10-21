@@ -16,6 +16,14 @@ body {
   padding: 0;
 }
 
+mat-card-title {
+  font-size: 25px;
+}
+
+mat-card-content {
+  font-size: 15px;
+}
+
 button[mat-raised-button] {
   background: #FFD5C3;
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {catchError, EMPTY, map, Observable} from "rxjs";
 import {ProductModel} from "../../models/product.model";
 import {Store} from "@ngrx/store";
-import {ProductsAction} from "../../actions/products.action";
+import {ProductsActions} from "../../actions/products.actions";
 import {ProductsSelectors} from "../../selectors/products.selectors";
 import {ProductsState} from "../../models/states/products.state";
 import {fromPromise} from "rxjs/internal/observable/innerFrom";
@@ -31,7 +31,7 @@ export class ProductsService {
     const productsState: ProductsState = {
       products: products
     };
-    this.store.dispatch(ProductsAction.pushProducts(productsState));
+    this.store.dispatch(ProductsActions.pushProducts(productsState));
   }
 
   private getProductsFromJson(): Observable<ProductModel[]> {
