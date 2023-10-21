@@ -9,6 +9,7 @@ import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
 import {categoriesReducer} from "./core/reducers/categories.reducer";
 import {productsReducer} from "./core/reducers/products.reducer";
+import {cartReducer} from "./core/reducers/cart.reducer";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {productsReducer} from "./core/reducers/products.reducer";
     SharedModule,
     StoreModule.forRoot({
       categoriesState: categoriesReducer,
-      productsState: productsReducer
+      productsState: productsReducer,
+      cartState: cartReducer
     })
   ],
   providers: [],
