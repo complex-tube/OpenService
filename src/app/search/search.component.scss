@@ -1,0 +1,32 @@
+@use "src/base";
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc(100vw - 205px);
+  height: 100%;
+
+  .container {
+    width: calc(100vw - 300px);
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-card {
+    width: calc(1vw * calc(500 / 1920 * 100));
+    height: auto;
+
+    margin-bottom: 20px;
+    padding: 20px;
+
+    mat-card-title {
+      margin-bottom: 20px;
+    }
+  }
+}

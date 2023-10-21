@@ -30,7 +30,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   private getProducts(): Subscription {
     return this.activatedRoute.queryParams.subscribe((data) => {
-      if (data['category']) {
+      if (data['category'] != undefined) {
         this.products$ = this.productsService.getProducts().pipe(
           map((products) => {return products.filter(
             (product) => {
@@ -38,6 +38,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
             }
           )})
         );
+      } else if (data['search_category'] != undefined) {
+
       } else {
         this.products$ = this.productsService.getProducts();
       }
