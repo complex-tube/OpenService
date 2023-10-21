@@ -13,9 +13,6 @@ export class CartService {
   private readonly products$: Observable<ProductModel[]>;
   constructor(private store: Store) {
     this.products$ = this.store.select(CartSelectors.selectCartProducts);
-    this.products$.subscribe((products) => {
-      console.log(products);
-    });
   }
 
   isProductInTheCart(product: ProductModel): Observable<boolean> {

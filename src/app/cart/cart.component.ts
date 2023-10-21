@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {CartService} from "../core/services/cart/cart.service";
-import {filter, from, map, Observable, of, switchMap} from "rxjs";
+import {filter, map, Observable, of, switchMap} from "rxjs";
 
 @Component({
   selector: 'os-cart',
