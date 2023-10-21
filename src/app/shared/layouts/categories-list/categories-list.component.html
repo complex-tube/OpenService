@@ -1,5 +1,11 @@
 <nav>
   <mat-nav-list>
+    <div>
+      <a mat-list-item routerLink="/products">
+        Все товары
+      </a>
+      <mat-divider></mat-divider>
+    </div>
     <div *ngFor="let category of (categories$ | async)" (click)="routeCategory(category)">
       <a mat-list-item>
         {{category.name}}
