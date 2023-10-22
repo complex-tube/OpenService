@@ -1,11 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductsService} from "../core/services/products/products.service";
-import {map, Observable, Subscription, tap} from "rxjs";
+import {map, Observable, Subscription} from "rxjs";
 import {ProductModel} from "../core/models/product.model";
 import {ActivatedRoute, Params} from "@angular/router";
 import {CartService} from "../core/services/cart/cart.service";
-import {CategoriesService} from "../core/services/categories/categories.service";
-import {ProductsModule} from "./products.module";
 
 @Component({
   selector: 'os-products',
