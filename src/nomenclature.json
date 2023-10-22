@@ -2,67 +2,67 @@
   "products": [
     {
       "id": 1,
-      "name": "Product #1",
+      "name": "Банан",
       "category": 1,
       "price": 100
     }, {
       "id": 2,
-      "name": "Product #2",
+      "name": "Яблоко",
       "category": 1,
       "price": 150
     }, {
       "id": 3,
-      "name": "Product #3",
+      "name": "Баклажан",
       "category": 12,
       "price": 600
     }, {
       "id": 4,
-      "name": "Product #4",
+      "name": "Кабачок",
       "category": 12,
       "price": 1000
     }, {
       "id": 5,
-      "name": "Product #5",
+      "name": "Груша",
       "category": 1,
       "price": 150
     }, {
       "id": 6,
-      "name": "Product #6",
+      "name": "Морковь",
       "category": 12,
       "price": 600
     }, {
       "id": 7,
-      "name": "Product #7",
+      "name": "Картофель",
       "category": 12,
       "price": 1000
     }, {
       "id": 8,
-      "name": "Product #8",
+      "name": "Апельсин",
       "category": 1,
       "price": 150
     }, {
       "id": 9,
-      "name": "Product #9",
+      "name": "Огурец",
       "category": 12,
       "price": 600
     }, {
       "id": 10,
-      "name": "Product #10",
+      "name": "Помидор",
       "category": 12,
       "price": 1000
     }, {
       "id": 11,
-      "name": "Product #11",
+      "name": "Грейпфрут",
       "category": 1,
       "price": 150
     }, {
       "id": 12,
-      "name": "Product #12",
+      "name": "Болгарский перец",
       "category": 12,
       "price": 600
     }, {
       "id": 13,
-      "name": "Product #13",
+      "name": "Капуста",
       "category": 12,
       "price": 1000
     }
@@ -70,10 +70,10 @@
   "categories": [
     {
       "id": 1,
-      "name": "Category #1"
+      "name": "Фрукты"
     }, {
       "id": 12,
-      "name": "Category #2"
+      "name": "Овощи"
     }
   ]
 }
