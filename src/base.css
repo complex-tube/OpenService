@@ -26,17 +26,21 @@ body {
 .main button[mat-raised-button] {
   background: #FFD5C3;
 }
-.main *::-webkit-scrollbar-track {
+
+*::-webkit-scrollbar-track {
   background: transparent;
 }
-.main *::-webkit-scrollbar-thumb {
+
+*::-webkit-scrollbar-thumb {
   background: darkgray;
   border-radius: 2px;
 }
-.main *::-webkit-scrollbar-thumb:hover {
+
+*::-webkit-scrollbar-thumb:hover {
   background: gray;
 }
-.main *::-webkit-scrollbar {
+
+*::-webkit-scrollbar {
   width: 4px;
 }
 
