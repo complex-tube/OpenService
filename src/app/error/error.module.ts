@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { ErrorRoutingModule } from './error-routing.module';
 import { ErrorComponent } from './error.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
   declarations: [
     ErrorComponent
   ],
-  imports: [
-    CommonModule,
-    ErrorRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        ErrorRoutingModule,
+        MatCardModule
+    ]
 })
 export class ErrorModule { }

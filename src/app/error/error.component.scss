@@ -1,0 +1,18 @@
+@use "src/base";
+
+section {
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-card {
+    width: calc(1vw * calc(300 / 1920 * 100));
+    height: auto;
+
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+}
