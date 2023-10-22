@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
-import {catchError, EMPTY, map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {ProductModel} from "../../models/api/product.model";
 import {Store} from "@ngrx/store";
 import {ProductsActions} from "../../actions/products.actions";
 import {ProductsSelectors} from "../../selectors/products.selectors";
 import {ProductsState} from "../../models/states/products.state";
-import {fromPromise} from "rxjs/internal/observable/innerFrom";
-import {environment} from "../../../../environments/environment";
-import axios, {AxiosError} from "axios";
 import {ApiService} from "../api/api.service";
-import {ProductsModule} from "../../../products/products.module";
 
 @Injectable({
   providedIn: 'root'
