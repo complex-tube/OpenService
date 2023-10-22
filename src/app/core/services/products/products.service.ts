@@ -1,56 +1,36 @@
 import { Injectable } from '@angular/core';
-import {catchError, EMPTY, map, Observable} from "rxjs";
-import {ProductModel} from "../../models/product.model";
+import {Observable} from "rxjs";
+import {ProductModel} from "../../models/api/product.model";
 import {Store} from "@ngrx/store";
 import {ProductsActions} from "../../actions/products.actions";
 import {ProductsSelectors} from "../../selectors/products.selectors";
 import {ProductsState} from "../../models/states/products.state";
-import {fromPromise} from "rxjs/internal/observable/innerFrom";
-import {environment} from "../../../../environments/environment";
-import axios, {AxiosError} from "axios";
+import {ApiService} from "../api/api.service";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class ProductsService extends ApiService<ProductModel> {
 
   private readonly products$: Observable<ProductModel[]>;
 
-  constructor(private store: Store) {
+  constructor(private store: Store, protected override router: Router) {
+    super(router);
     this.products$ = this.store.select(ProductsSelectors.selectProducts);
-    this.getProductsFromJson().subscribe((products) => {
-      this.pushProducts(products);
+    this.getEntitiesFromJson('products', ProductModel).subscribe((products) => {
+      this.pushEntity(products);
     });
   }
 
-  getProducts(): Observable<ProductModel[]> {
+  override getEntities(): Observable<ProductModel[]> {
     return this.products$;
   }
 
-  private pushProducts(products: ProductModel[]): void {
+  protected override pushEntity(products: ProductModel[]) {
     const productsState: ProductsState = {
       products: products
     };
     this.store.dispatch(ProductsActions.pushProducts(productsState));
-  }
-
-  private getProductsFromJson(): Observable<ProductModel[]> {
-    return fromPromise(axios.get(environment.nomenclaturePath))
-        .pipe(
-            catchError((error: AxiosError) => {
-              console.log(error.message);
-              return EMPTY
-            }),
-            map((data): ProductModel[] => {
-              return data.data['products'].map((product: any): ProductModel => {
-                return {
-                  id: product['id'],
-                  name: product['name'],
-                  category: product['category'],
-                  price: product['price']
-                }
-              });
-            })
-        );
   }
 }

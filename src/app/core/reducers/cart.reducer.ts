@@ -1,7 +1,7 @@
 import {createReducer, on} from "@ngrx/store";
 import {ProductsState} from "../models/states/products.state";
 import {CartActions} from "../actions/cart.actions";
-import {ProductModel} from "../models/product.model";
+import {ProductModel} from "../models/api/product.model";
 
 const initialCartState: ProductsState = {
   products: []
