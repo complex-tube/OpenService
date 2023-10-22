@@ -52,7 +52,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
                     filterResult = true;
                   }
                   if (typeof tempProduct[productParam] == "string" &&
-                    String(tempProduct[productParam]).toLowerCase().includes(String(data[param]).toLowerCase())) {
+                    String(tempProduct[productParam]).toLowerCase().startsWith(String(data[param]).toLowerCase())) {
                     filterResult = true;
                   }
                 }
