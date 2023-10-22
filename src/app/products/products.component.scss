@@ -1,0 +1,24 @@
+@use "src/base";
+
+section {
+  height: auto;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+
+  mat-card {
+    width: calc(1vw * calc(300 / 1920 * 100));
+    height: calc(1vh * calc(250 / 1080 * 100));
+
+    padding: 20px;
+
+    mat-card-content {
+      padding: 0;
+    }
+    button {
+      margin-top: auto;
+    }
+  }
+}
