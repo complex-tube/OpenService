@@ -1,19 +1,9 @@
 @use "src/base";
 
 section {
-  display: flex;
-  justify-content: center;
   align-items: center;
 
-  width: calc(100vw - 205px);
-  height: 100%;
-
   .container {
-    width: calc(100vw - 300px);
-
-    margin-top: 60px;
-    margin-bottom: 60px;
-
     display: flex;
     flex-direction: column;
   }
