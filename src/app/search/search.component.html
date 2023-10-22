@@ -4,7 +4,11 @@
       <mat-card-title>Поиск</mat-card-title>
       <mat-form-field>
         <mat-label>Категория</mat-label>
-        <input matInput formControlName="category">
+        <mat-select formControlName="category">
+          <mat-option *ngFor="let category of (categoriesService.getCategories() | async)" value="{{category.id}}">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Название товара</mat-label>

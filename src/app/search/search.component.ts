@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import {CategoriesService} from "../core/services/categories/categories.service";
 
 @Component({
   selector: 'os-search',
@@ -11,7 +12,8 @@ export class SearchComponent implements OnInit{
   searchFormGroup!: FormGroup;
 
   constructor(private router: Router,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              protected categoriesService: CategoriesService) {
   }
 
   ngOnInit() {
@@ -26,6 +28,6 @@ export class SearchComponent implements OnInit{
       category: this.searchFormGroup.get('category')?.value,
       product: this.searchFormGroup.get('product')?.value
     };
-    this.router.navigate(['products'], {queryParams: {search_category: search.category, search_product: search.product}});
+    this.router.navigate(['products'], {queryParams: {category: search.category, name: search.product}});
   }
 }
