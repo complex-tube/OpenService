@@ -1,6 +1,6 @@
 import {createAction, props} from "@ngrx/store";
 import {ProductsState} from "../models/states/products.state";
-import {ProductModel} from "../models/product.model";
+import {ProductModel} from "../models/api/product.model";
 
 export namespace CartActions {
   export const pushProducts = createAction(

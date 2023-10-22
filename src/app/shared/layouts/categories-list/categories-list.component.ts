@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {CategoriesService} from "../../../core/services/categories/categories.service";
 import {Observable} from "rxjs";
-import {CategoryModel} from "../../../core/models/category.model";
+import {CategoryModel} from "../../../core/models/api/category.model";
 import {Router} from "@angular/router";
 
 @Component({

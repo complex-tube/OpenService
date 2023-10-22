@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Observable, of, switchMap} from "rxjs";
-import {ProductModel} from "../../models/product.model";
+import {ProductModel} from "../../models/api/product.model";
 import {CartSelectors} from "../../selectors/cart.selectors";
 import {CartActions} from "../../actions/cart.actions";
 
