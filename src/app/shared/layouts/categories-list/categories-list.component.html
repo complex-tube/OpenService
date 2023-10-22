@@ -6,7 +6,7 @@
       </a>
       <mat-divider></mat-divider>
     </div>
-    <div *ngFor="let category of (categories$ | async)" (click)="routeCategory(category)">
+    <div *ngFor="let category of (categoriesService.getEntities() | async)" (click)="routeCategory(category)">
       <a mat-list-item>
         {{category.name}}
       </a>

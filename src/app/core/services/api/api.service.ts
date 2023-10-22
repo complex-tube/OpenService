@@ -3,12 +3,13 @@ import {catchError, EMPTY, map, Observable} from "rxjs";
 import {fromPromise} from "rxjs/internal/observable/innerFrom";
 import axios, {AxiosError} from "axios";
 import {environment} from "../../../../environments/environment";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export abstract class ApiService<T> {
-  protected constructor() { }
+  protected constructor(protected router: Router) { }
 
   protected abstract getEntities(): Observable<T[]>
 
@@ -18,6 +19,7 @@ export abstract class ApiService<T> {
     return fromPromise(axios.get(environment.nomenclaturePath)).pipe(
       catchError((error: AxiosError) => {
         console.log(error.message);
+        this.router.navigate(['error']);
         return EMPTY
       }),
       map((data): T[] => {

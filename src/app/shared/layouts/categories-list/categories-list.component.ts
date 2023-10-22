@@ -11,10 +11,7 @@ import {Router} from "@angular/router";
 })
 export class CategoriesListComponent {
 
-  categories$: Observable<CategoryModel[]>;
-
-  constructor(private categoriesService: CategoriesService, private router: Router) {
-    this.categories$ = this.categoriesService.getCategories();
+  constructor(protected categoriesService: CategoriesService, private router: Router) {
   }
 
   routeCategory(category: CategoryModel) {
