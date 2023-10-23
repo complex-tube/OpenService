@@ -10,6 +10,8 @@ $header-height: 60px;
 body {
   padding: 0;
   margin: 0;
+
+  overflow: hidden;
 }
 
 .main {
@@ -17,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
 
-    width: calc(100vw - 205px);
+    width: calc(100vw - 200px);
     height: 100%;
 
     .container {

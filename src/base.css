@@ -1,12 +1,13 @@
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 .main section {
   display: flex;
   justify-content: center;
-  width: calc(100vw - 205px);
+  width: calc(100vw - 200px);
   height: 100%;
 }
 .main section .container {
