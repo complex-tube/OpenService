@@ -1,7 +1,7 @@
 <section>
   <ng-container *ngIf="(cartService.getProducts() | async)?.length == 0">
-    <div class="container">
-      <mat-card class="empty">
+    <div class="container empty">
+      <mat-card>
         <mat-card-title>В корзине еще ничего нет</mat-card-title>
       </mat-card>
     </div>
@@ -15,7 +15,7 @@
       </mat-card>
     </div>
     <mat-card class="total-cost">
-      <mat-card-title>Общая стоимость товаров: {{getTotalCost() | async}} руб</mat-card-title>
+      <mat-card-title>Общая стоимость товаров: {{cartService.getTotalCost() | async}} руб</mat-card-title>
     </mat-card>
   </ng-container>
 </section>

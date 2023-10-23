@@ -1,3 +1,7 @@
+:root {
+  --mat-badge-background-color: #4479D4;
+}
+
 body {
   padding: 0;
   margin: 0;
