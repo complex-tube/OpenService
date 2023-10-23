@@ -1,18 +1,13 @@
 @use "src/base";
 
 section {
-  height: calc(100vh - 60px);
 
   overflow-y: scroll;
 
   .container {
-    height: 100%;
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px 20px;
-
-    margin-bottom: 120px;
   }
 
   mat-card {
