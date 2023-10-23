@@ -7,6 +7,10 @@ $container-adaptive-full-hd-width: $adaptive-full-hd-coefficient-width * 1520;
 //Sizes
 $header-height: 60px;
 
+:root {
+  --mat-badge-background-color: #4479D4;
+}
+
 body {
   padding: 0;
   margin: 0;
