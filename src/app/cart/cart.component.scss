@@ -9,15 +9,6 @@ section {
 
     display: flex;
     flex-direction: column;
-
-    &.empty {
-      margin-left: 0;
-      mat-card {
-        height: auto;
-
-        align-self: center;
-      }
-    }
   }
 
   mat-card {

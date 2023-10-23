@@ -1,5 +1,5 @@
 <section>
-  <div class="container">
+  <div class="container" *ngIf="(products$ | async)!.length > 0">
     <mat-card *ngFor="let product of (products$ | async)">
       <mat-card-title>{{product.name}}</mat-card-title>
       <mat-card-content>Цена: {{product.price}}</mat-card-content>
@@ -9,6 +9,11 @@
       <ng-container *ngIf="(cartService.isProductInTheCart(product) | async)">
         <button mat-raised-button (click)="cartService.deleteFromCart(product)">Убрать из корзины</button>
       </ng-container>
+    </mat-card>
+  </div>
+  <div class="container empty" *ngIf="(products$ | async)!.length == 0">
+    <mat-card>
+      <mat-card-title>Товаров по такому запросу нет</mat-card-title>
     </mat-card>
   </div>
 </section>

@@ -21,6 +21,13 @@ body {
   margin-top: 60px;
   margin-bottom: 60px;
 }
+.main section .container.empty {
+  margin-left: 0;
+}
+.main section .container.empty mat-card {
+  height: auto;
+  align-self: center;
+}
 .main .mat-list-base {
   padding: 0;
 }
