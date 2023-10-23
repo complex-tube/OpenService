@@ -11,14 +11,4 @@ export class CartComponent {
 
   constructor(protected cartService: CartService) {
   }
-
-  getTotalCost(): Observable<number> {
-    return this.cartService.getProducts().pipe(
-      filter(products => products.length > 0),
-      map(products => products.map(product => product.price)),
-      switchMap(prices => {
-        return of(prices.reduce((accum: number, price) => accum + price, 0))
-      })
-    )
-  }
 }

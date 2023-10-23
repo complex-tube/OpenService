@@ -5,6 +5,7 @@ import { CategoriesListComponent } from './layouts/categories-list/categories-li
 import {MatButtonModule} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {MatListModule} from "@angular/material/list";
+import {MatBadgeModule} from "@angular/material/badge";
 
 
 
@@ -21,7 +22,8 @@ import {MatListModule} from "@angular/material/list";
     CommonModule,
     MatButtonModule,
     RouterLink,
-    MatListModule
+    MatListModule,
+    MatBadgeModule
   ]
 })
 export class SharedModule { }

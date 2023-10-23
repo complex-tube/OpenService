@@ -1,7 +1,9 @@
 @use "src/base";
 
 section {
-  height: auto;
+
+  overflow-y: scroll;
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -7,9 +7,15 @@ $container-adaptive-full-hd-width: $adaptive-full-hd-coefficient-width * 1520;
 //Sizes
 $header-height: 60px;
 
+:root {
+  --mat-badge-background-color: #4479D4;
+}
+
 body {
   padding: 0;
   margin: 0;
+
+  overflow: hidden;
 }
 
 .main {
@@ -17,11 +23,14 @@ body {
     display: flex;
     justify-content: center;
 
-    width: calc(100vw - 205px);
-    height: 100%;
+    width: calc(100vw - 200px);
+    height: calc(100vh - 60px);
+
+    overflow-y: scroll;
 
     .container {
       width: calc(100vw - 300px);
+      height: fit-content;
 
       margin-top: 60px;
       margin-bottom: 60px;
@@ -43,21 +52,21 @@ body {
   button[mat-raised-button] {
     background: #FFD5C3;
   }
+}
 
-  *::-webkit-scrollbar-track {
-    background: transparent;
-  }
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background: darkgray;
-    border-radius: 2px;
-  }
+*::-webkit-scrollbar-thumb {
+  background: darkgray;
+  border-radius: 2px;
+}
 
-  *::-webkit-scrollbar-thumb:hover {
-    background: gray;
-  }
+*::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
 
-  *::-webkit-scrollbar {
-    width: 4px;
-  }
+*::-webkit-scrollbar {
+  width: 4px;
 }

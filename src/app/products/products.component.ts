@@ -31,11 +31,23 @@ export class ProductsComponent implements OnInit, OnDestroy {
   private getProducts(): Subscription {
     return this.activatedRoute.queryParams.subscribe((data: Params) => {
       this.products$ = this.productsService.getEntities();
-      this.getFilteredProducts(data);
+      this.setProductsSorted();
+      this.setProductsFiltered(data);
     });
   }
 
-  private getFilteredProducts(data: Params): void {
+  private setProductsSorted(): void {
+    this.products$ = this.products$.pipe(
+      map( (products) => {
+        const tempProducts = [...products];
+        return tempProducts.sort((firstProduct: ProductModel, secondProduct: ProductModel) => {
+          return firstProduct.name.toLowerCase().localeCompare(secondProduct.name.toLowerCase());
+        });
+      })
+    );
+  }
+
+  private setProductsFiltered(data: Params): void {
     for (const param in data) {
       if (data[param] != '') {
         this.products$ = this.products$.pipe(

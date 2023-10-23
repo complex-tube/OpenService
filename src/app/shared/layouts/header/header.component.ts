@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CartService} from "../../../core/services/cart/cart.service";
 
 @Component({
   selector: 'os-header',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  constructor(protected cartService: CartService) {
+  }
 }
